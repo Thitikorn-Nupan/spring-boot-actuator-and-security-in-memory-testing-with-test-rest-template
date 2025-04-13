@@ -9,7 +9,7 @@ import java.util.HashMap;
 @RequestMapping(value = "/api")
 public class TestControl {
 
-    @GetMapping(value = "/server")
+    @GetMapping(value = {"/server","/",""})
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     public HashMap server() {

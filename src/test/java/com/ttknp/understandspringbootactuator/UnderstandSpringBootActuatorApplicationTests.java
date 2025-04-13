@@ -14,14 +14,14 @@ import java.util.Map;
 import static org.assertj.core.api.BDDAssertions.then;
 
 /**
- * Basic integration test for service demo application.
- * When request like below you have to run your app (** Because it's TestRestTemplate class same RestTemplate class)
- * It's not including security logic
+     Basic integration test for service demo application.
+     When request like below you have to run your app (** Because it's TestRestTemplate class same RestTemplate class)
+     It's not including security logic
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UnderstandSpringBootActuatorApplicationTests {
 
-    @LocalServerPort // Get local server port
+    @LocalServerPort // Get local server port behind the sense work like this @Value("${local.server.port}").
     private int port;
     private final int portActuator = 8081;
 
@@ -31,10 +31,10 @@ class UnderstandSpringBootActuatorApplicationTests {
     private ResponseEntity<Map> entity;
 
     private HttpHeaders getHeaders() {
-        /**
-         // Basic authenticate i set up on security config class
-         // normally i will use Postman and choose Auth Type -> Basic Auth
-         // And you can put user/pass quickly if you send value on header like below
+        /*
+         Basic authenticate i set up on security config class
+         normally i will use Postman and choose Auth Type -> Basic Auth
+         And you can put user/pass quickly if you send value on header like below
          */
         final String base64UsernameAndPassword = Base64.getEncoder().encodeToString("admin:12345".getBytes());
         HttpHeaders headers = new HttpHeaders();
