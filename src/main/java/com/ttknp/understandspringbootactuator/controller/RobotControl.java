@@ -17,15 +17,11 @@ public class RobotControl {
         logger = LoggerFactory.getLogger(this.getClass());
     }
 
-    // The @ResponseBody annotation tells Spring MVC not to render a model into a view but,
-    // rather, to write the returned object into the response body ** it will work like ResponseEntity.body(...);
+    // The @ResponseBody annotation tells Spring MVC not to render a model into a view but, rather, to write the returned object into the response body ** it will work like ResponseEntity.body(...);
     @ResponseBody
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     @GetMapping
     private Robot getRobotById(@RequestParam(required = false,defaultValue = "1000") int id) {
         return new Robot(id,"XT-23565-TD6-265");
     }
-
-
-
 }

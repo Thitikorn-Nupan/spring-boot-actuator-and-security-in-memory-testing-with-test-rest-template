@@ -42,9 +42,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/api/admin/info_application").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET,"/api/admin/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST,"/api/admin/**").hasRole("ADMIN")
-                        .anyRequest().authenticated()
+                        .anyRequest()
+                        .authenticated()
                 );
-
         return httpSecurity.build();
     }
 }
